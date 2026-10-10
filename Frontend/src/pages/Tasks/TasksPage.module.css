@@ -1,0 +1,42 @@
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 100px 24px 40px;
+  animation: pageFadeIn 0.3s ease-out;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.subtitle {
+  color: #9c94b8;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

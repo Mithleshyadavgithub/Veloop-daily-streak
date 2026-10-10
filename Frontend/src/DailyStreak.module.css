@@ -1,0 +1,241 @@
+.appContainer {
+    background-color: #0b071e;
+    color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #120a28;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .navLinks {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .navItem {
+    color: #9c94b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 8px 14px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .navItemActive {
+    background: linear-gradient(135deg, #32185f, #1c0d36);
+    border: 1px solid rgba(147, 51, 234, 0.4);
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .userProfileMenu {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .contentWrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .pageHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .backBtn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-radius: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+  }
+  
+  .heroGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  @media (min-width: 992px) {
+    .heroGrid {
+      grid-template-columns: 1.45fr 1fr;
+    }
+  }
+  
+  .mainHeroCard {
+    background: linear-gradient(145deg, #180d35, #110826);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  }
+  
+  .heroTitle {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+  
+  .claimHeroBtn {
+    background: linear-gradient(135deg, #ffd700, #ffaa00);
+    color: #0b071e;
+    font-weight: 800;
+    border: none;
+    border-radius: 16px;
+    padding: 16px 28px;
+    width: 100%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.35);
+    margin-top: 24px;
+  }
+  
+  .ultimateHeroCard {
+    background: linear-gradient(135deg, #241147, #120729);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    border-radius: 28px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .statsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .statBox {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 20px;
+  }
+  
+  .timelineCard {
+    background: #130a29;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .rewardGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  @media (min-width: 768px) {
+    .rewardGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .rewardGrid {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+  
+  .rewardCard {
+    background: rgba(26, 17, 51, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 20px 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 210px;
+    justify-content: space-between;
+  }
+  
+  .todayCard {
+    border: 2px solid #ffd700;
+    background: linear-gradient(160deg, rgba(60, 30, 110, 0.95), rgba(26, 17, 51, 0.95));
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
+  }
+  
+  .cardClaimBtn {
+    background: linear-gradient(135deg, #ffd700, #ffaa00);
+    color: #0b071e;
+    font-weight: 800;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 12px;
+    width: 100%;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  
+  .whyGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  
+  @media (min-width: 768px) {
+    .whyGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .whyCard {
+    background: #130a29;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  
+  .antiCheatBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #180d35;
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.6);
+  }
+  

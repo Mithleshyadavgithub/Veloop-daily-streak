@@ -1,0 +1,59 @@
+.dashboardContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 72px 12px 85px;
+  animation: pageFadeIn 0.3s ease-out;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .dashboardContainer {
+    max-width: 900px;
+    padding: 85px 20px 85px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dashboardContainer {
+    max-width: 1200px;
+    padding: 95px 24px 60px;
+  }
+}
+
+.modeSwitcherRow {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.modeBtn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #9c94b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modeActive {
+  background: linear-gradient(135deg, rgba(124, 77, 255, 0.35), rgba(45, 15, 80, 0.55));
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #ffffff;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,2424 @@
+/* VELoop Rewards — High-End Gamified Velvet-Purple & Amber Design System */
+
+.appOuterWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 0 80px 0;
+  width: 100%;
+  background: var(--bg-body, #070314);
+  overflow-x: hidden;
+}
+
+@media (min-width: 960px) {
+  .appOuterWrapper {
+    padding: 12px 14px 80px;
+  }
+}
+
+.mainResponsiveFrame {
+  width: 100%;
+  max-width: 1600px;
+  background: radial-gradient(circle at 10% 10%, rgba(255, 123, 0, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 90% 90%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
+              #0d0722;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 60px rgba(139, 92, 246, 0.15);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 960px) {
+  .mainResponsiveFrame {
+    border: 1.5px solid rgba(139, 92, 246, 0.3);
+    border-radius: 28px;
+    min-height: auto;
+  }
+}
+
+/* ========================================================= */
+/* 🌟 TOP NAVIGATION BAR (Clean, Spacious, Zero Overlap)     */
+/* ========================================================= */
+.topHeaderBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  background: rgba(14, 8, 33, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1.5px solid rgba(139, 92, 246, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.headerLeftGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.brandTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.hamburgerMenuBtn {
+  background: rgba(255, 145, 0, 0.12);
+  border: 1.5px solid rgba(255, 145, 0, 0.4);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(255, 145, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.hamburgerMenuBtn:hover {
+  background: rgba(255, 145, 0, 0.25);
+  border-color: #ff9100;
+  transform: scale(1.06);
+}
+
+.brandLogoBox {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff9100, #ff6200, #ec4899);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(255, 123, 0, 0.45);
+  flex-shrink: 0;
+}
+
+.flameIconSpin {
+  animation: flameGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes flameGlow {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(255,255,255,0.8)); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 10px rgba(255,145,0,1)); }
+}
+
+.brandName {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.brandAccent {
+  color: #ff9100;
+  font-weight: 900;
+}
+
+/* Center Desktop Navigation Links (Clean & Spacious) */
+.navLinksRow {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin: 0 12px;
+}
+
+@media (min-width: 1240px) {
+  .navLinksRow {
+    display: inline-flex;
+  }
+}
+
+.navLinkItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #b3a6d4;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 7px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.navLinkItem:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.navLinkActive {
+  color: #ffffff !important;
+  background: rgba(139, 92, 246, 0.2) !important;
+  border-color: rgba(139, 92, 246, 0.4) !important;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+}
+
+/* Header Right User Status Actions */
+.headerRightActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Highlight "How to Earn" Header Button */
+.howToEarnHighlightBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.22) 0%, rgba(255, 123, 0, 0.28) 100%);
+  border: 1.5px solid #ffd700;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.35), inset 0 0 8px rgba(255, 215, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  animation: pulseGlow 2.5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3), inset 0 0 6px rgba(255, 215, 0, 0.15);
+    border-color: rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 22px rgba(255, 215, 0, 0.6), inset 0 0 12px rgba(255, 215, 0, 0.3);
+    border-color: #ffd700;
+  }
+}
+
+.howToEarnHighlightBtn:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.35) 0%, rgba(255, 123, 0, 0.45) 100%);
+  box-shadow: 0 0 28px rgba(255, 215, 0, 0.75);
+}
+
+.sparklePulse {
+  animation: rotateSparkle 3s linear infinite;
+}
+
+@keyframes rotateSparkle {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.15); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.tokenPill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1.5px solid rgba(255, 215, 0, 0.45);
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+  transition: transform 0.15s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.tokenPill:hover {
+  transform: translateY(-2px);
+  border-color: #ffd700;
+}
+
+.tokenAmount {
+  font-weight: 900;
+  color: #ffd700;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.tokenSubtext {
+  font-size: 0.65rem;
+  color: #9c94b8;
+  font-weight: 700;
+}
+
+.streakFlamePill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 123, 0, 0.18);
+  border: 1.5px solid rgba(255, 123, 0, 0.45);
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(255, 123, 0, 0.25);
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.streakFlamePill:hover {
+  transform: translateY(-2px);
+}
+
+.streakPillCount {
+  font-weight: 900;
+  color: #ff9100;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.userProfilePill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(139, 92, 246, 0.35);
+  padding: 5px 12px 5px 6px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.userProfilePill:hover {
+  border-color: #ff9100;
+  background: rgba(139, 92, 246, 0.2);
+}
+
+.userAvatarMini {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.userAvatarMiniMK {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9100, #8b5cf6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+/* Auth Buttons in Header */
+.authButtonsGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.registerHeaderBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #ff9100, #ff6200);
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(255, 123, 0, 0.35);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.registerHeaderBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 123, 0, 0.55);
+}
+
+.loginHeaderBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1.5px solid rgba(139, 92, 246, 0.4);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.loginHeaderBtn:hover {
+  background: rgba(139, 92, 246, 0.3);
+  border-color: #a78bfa;
+  transform: translateY(-2px);
+}
+
+.userLoggedInPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  padding: 4px 10px 4px 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.userLoggedInPill:hover {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.22);
+}
+
+.loggedInUserName {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logoutMiniBtn {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #a78bfa;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-left: 2px;
+}
+
+.logoutMiniBtn:hover {
+  background: #ff3366;
+  color: #ffffff;
+}
+
+.shieldBtn {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.shieldBtn:hover {
+  background: rgba(16, 185, 129, 0.3);
+  transform: scale(1.06);
+}
+
+/* ========================================================= */
+/* ⚡ REAL-TIME SYSTEM STATUS BAR                            */
+/* ========================================================= */
+.systemStatusBar {
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.18);
+  padding: 8px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.statusTickerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a78bfa;
+  flex-wrap: wrap;
+}
+
+.statusLiveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseDot 1.5s infinite;
+  flex-shrink: 0;
+}
+
+.statusLiveText {
+  color: #10b981;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.statusSeparator {
+  color: #6b6287;
+}
+
+.statusMeta {
+  color: #9c94b8;
+}
+
+.statusTickerRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #10b981;
+  font-weight: 800;
+  margin-left: auto;
+}
+
+/* ========================================================= */
+/* 🚀 WELCOME HERO BANNER                                    */
+/* ========================================================= */
+.welcomeBanner {
+  padding: 32px 36px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.welcomeTextGroup {
+  flex: 1;
+  min-width: 280px;
+}
+
+.dashboardTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(139, 92, 246, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #c4b5fd;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.welcomeTitle {
+  font-size: 2.3rem;
+  font-weight: 1000;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+}
+
+@media (min-width: 600px) {
+  .welcomeTitle {
+    font-size: 2.7rem;
+  }
+}
+
+.welcomeSub {
+  color: #b3a6d4;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 0 16px;
+}
+
+.momentumChipsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.momentumChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-size: 0.76rem;
+  color: #d1c4e9;
+}
+
+.momentumChip strong {
+  color: #ffd700;
+}
+
+.welcomeActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media (min-width: 680px) {
+  .welcomeActions {
+    width: auto;
+  }
+}
+
+.checkInStreakBtn {
+  background: linear-gradient(135deg, #ff9100, #ff6200);
+  color: #ffffff;
+  font-weight: 900;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 22px rgba(255, 123, 0, 0.45);
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+@media (min-width: 680px) {
+  .checkInStreakBtn {
+    flex: none;
+  }
+}
+
+.checkInStreakBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(255, 123, 0, 0.6);
+}
+
+/* Hero Spotlight "How To Earn" Button */
+.howToEarnHeroBtn {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.16) 0%, rgba(168, 85, 247, 0.22) 100%);
+  border: 1.5px solid rgba(255, 215, 0, 0.65);
+  color: #ffd700;
+  font-weight: 800;
+  padding: 14px 22px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.howToEarnHeroBtn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(168, 85, 247, 0.4) 100%);
+  border-color: #ffd700;
+  box-shadow: 0 6px 26px rgba(255, 215, 0, 0.5);
+  color: #ffffff;
+}
+
+.earnPointsBtn {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: #ffffff;
+  font-weight: 900;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+@media (min-width: 680px) {
+  .earnPointsBtn {
+    flex: none;
+  }
+}
+
+.earnPointsBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(139, 92, 246, 0.55);
+}
+
+/* ========================================================= */
+/* 📊 4 HERO STAT CARDS GRID                                 */
+/* ========================================================= */
+.statCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding: 0 36px 30px;
+}
+
+@media (min-width: 1024px) {
+  .statCardsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.statCard {
+  background: linear-gradient(145deg, rgba(24, 15, 56, 0.85), rgba(16, 9, 41, 0.95));
+  border: 1.5px solid rgba(139, 92, 246, 0.28);
+  border-radius: 22px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 145px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transition: all 0.25s ease;
+  backdrop-filter: blur(12px);
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 145, 0, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+.statCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.statTagLabel {
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+
+.statTagYellow { color: #ffd700; }
+.statTagOrange { color: #ff7b00; }
+.statTagPurple { color: #c4b5fd; }
+.statTagCyan { color: #22d3ee; }
+
+.statIconBox {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statBigValue {
+  font-size: 2.2rem;
+  font-weight: 1000;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.statUnit {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #a78bfa;
+}
+
+.statSubLabel {
+  font-size: 0.78rem;
+  color: #9c94b8;
+  font-weight: 600;
+}
+
+.statDeltaGreen {
+  color: #10b981;
+  font-weight: 800;
+  font-size: 0.78rem;
+}
+
+.levelProgressTrack {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.levelProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  border-radius: 8px;
+}
+
+/* ========================================================= */
+/* 📅 DAILY CHECK-IN SYSTEM & 7-DAY TRACK                    */
+/* ========================================================= */
+.checkInSystemCard {
+  background: linear-gradient(145deg, rgba(23, 14, 53, 0.9), rgba(15, 8, 38, 0.95));
+  border: 1.5px solid rgba(139, 92, 246, 0.35);
+  border-radius: 28px;
+  padding: 26px 32px;
+  margin: 0 36px 30px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.checkInTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.checkInTitleBox {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.flameIconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 123, 0, 0.18);
+  border: 1.5px solid rgba(255, 123, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 123, 0, 0.3);
+}
+
+.checkInSystemLabel {
+  font-size: 0.74rem;
+  font-weight: 900;
+  color: #ff9100;
+  letter-spacing: 0.9px;
+}
+
+.streakBigTitle {
+  font-size: 1.45rem;
+  font-weight: 1000;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.streakMilestoneBadges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.longestBadge {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #c4b5fd;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 18px;
+}
+
+.nextMilestoneBadge {
+  background: rgba(139, 92, 246, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #d8b4fe;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 18px;
+}
+
+/* 7 Horizontal Node Roadmap */
+.daysHorizontalTrack {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 22px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dayPillNode {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1.5px solid rgba(139, 92, 246, 0.22);
+  border-radius: 16px;
+  padding: 10px 4px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.dayPillHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.dayWord {
+  display: inline;
+}
+
+.fullRewardText {
+  display: inline;
+}
+
+.shortRewardText {
+  display: none;
+}
+
+.dayPillDone {
+  border-color: rgba(255, 123, 0, 0.6);
+  background: rgba(255, 123, 0, 0.12);
+}
+
+.dayPillCurrent {
+  border-color: #ff9100;
+  background: rgba(255, 145, 0, 0.2);
+  box-shadow: 0 0 20px rgba(255, 145, 0, 0.35);
+  transform: scale(1.03);
+}
+
+.dayPillLabel {
+  font-size: 0.68rem;
+  font-weight: 900;
+  color: #b3a6d4;
+  text-transform: uppercase;
+}
+
+.dayPillIndex {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #ffd700;
+}
+
+.dayPillRewardTag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #ffd700;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.dayCheckBadge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.74rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.badgeCheckedYellow { background: #ff9100; color: #ffffff; box-shadow: 0 0 10px rgba(255, 145, 0, 0.5); }
+.badgeCurrentPurple { background: #8b5cf6; color: #ffffff; box-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
+.badgeLockedGray { background: rgba(255, 255, 255, 0.08); color: #6b6287; }
+
+/* Bottom CTA Claim Bar */
+.claimCtaBanner {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(25, 12, 58, 0.4));
+  border: 1.5px solid rgba(255, 123, 0, 0.45);
+  border-radius: 20px;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ctaLeftInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ctaZapIconBox {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 123, 0, 0.2);
+  border: 1px solid rgba(255, 123, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(255, 123, 0, 0.35);
+}
+
+.ctaAvailableTag {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #ff9100;
+  letter-spacing: 0.7px;
+}
+
+.ctaRewardName {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+}
+
+.claimRewardActionBtn {
+  background: linear-gradient(135deg, #ff9100, #ff6200);
+  color: #ffffff;
+  font-weight: 900;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 22px rgba(255, 123, 0, 0.45);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .claimRewardActionBtn {
+    width: auto;
+  }
+}
+
+.claimRewardActionBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(255, 123, 0, 0.6);
+}
+
+/* ========================================================= */
+/* 🎁 DAILY ROTATING SURPRISE DROP SECTION                   */
+/* ========================================================= */
+.surpriseDropCard {
+  background: linear-gradient(135deg, rgba(28, 16, 64, 0.95), rgba(18, 9, 46, 0.95));
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  border-radius: 28px;
+  padding: 28px 32px;
+  margin: 0 36px 30px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55), 0 0 40px rgba(255, 215, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.surpriseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+}
+
+.surpriseIconCircle {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(255, 215, 0, 0.18);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.35);
+}
+
+.surpriseBadge {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #ffd700;
+  letter-spacing: 0.8px;
+}
+
+.surpriseTagBadge {
+  background: #ff9100;
+  color: #000;
+  font-size: 0.62rem;
+  font-weight: 1000;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.surpriseTitle {
+  font-size: 1.35rem;
+  font-weight: 1000;
+  color: #ffffff;
+  margin: 2px 0 0;
+}
+
+.timerPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #c4b5fd;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.timerDigits {
+  color: #ffd700;
+  font-family: monospace;
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+.surpriseMainRow {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.surpriseVisualBox {
+  width: 140px;
+  height: 140px;
+  border-radius: 24px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.25), rgba(255, 145, 0, 0.1));
+  border: 1.5px solid rgba(255, 215, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.floatingGiftIcon {
+  animation: floatBounce 3s ease-in-out infinite;
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.activeTodayTag {
+  position: absolute;
+  bottom: -10px;
+  background: linear-gradient(135deg, #ff9100, #ff6200);
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-weight: 900;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  letter-spacing: 0.6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.activeDotPulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: pulseDot 1.5s infinite;
+}
+
+.surpriseContent {
+  flex: 1;
+  min-width: 280px;
+}
+
+.surpriseDescription {
+  color: #d1c4e9;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.surprisePerksGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.surprisePerkItem {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.perkIconBox {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.perkLabel {
+  font-size: 0.72rem;
+  color: #9c94b8;
+  display: block;
+}
+
+.perkValue {
+  font-size: 0.92rem;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.claimSurpriseBtn {
+  background: linear-gradient(135deg, #ff9100, #ff6200);
+  color: #ffffff;
+  font-weight: 900;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 22px rgba(255, 123, 0, 0.45);
+  transition: all 0.2s ease;
+}
+
+.claimSurpriseBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(255, 123, 0, 0.6);
+}
+
+.toggleScheduleBtn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #c4b5fd;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 11px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.toggleScheduleBtn:hover {
+  background: rgba(139, 92, 246, 0.2);
+  color: #ffffff;
+}
+
+.dropScheduleDrawer {
+  margin-top: 20px;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 18px;
+}
+
+.scheduleTitle {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .scheduleGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.scheduleDayCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.scheduleDayActive {
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.12);
+}
+
+.scheduleRewardName {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.scheduleRewardDesc {
+  font-size: 0.72rem;
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.guaranteeFooter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-size: 0.76rem;
+  color: #9c94b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 12px;
+}
+
+/* ========================================================= */
+/* 🏆 7-DAY REWARD CARDS MATRIX                              */
+/* ========================================================= */
+.pdfStreakSection {
+  padding: 0 36px 32px;
+}
+
+.ultimateBannerPdf {
+  background: linear-gradient(135deg, rgba(255, 145, 0, 0.22), rgba(139, 92, 246, 0.25), rgba(236, 72, 153, 0.18));
+  border: 2px solid rgba(255, 215, 0, 0.45);
+  border-radius: 26px;
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 215, 0, 0.15);
+}
+
+.ultimateCrownWrapper {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.4), rgba(255, 145, 0, 0.15));
+  border: 1.5px solid rgba(255, 215, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.ultimateTag {
+  color: #ffd700;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.9px;
+}
+
+.vipBadgeHeader {
+  background: #ffd700;
+  color: #000000;
+  font-size: 0.65rem;
+  font-weight: 1000;
+  padding: 2px 8px;
+  border-radius: 12px;
+  letter-spacing: 0.6px;
+}
+
+.ultimateRewardTitle {
+  font-size: 1.6rem;
+  font-weight: 1000;
+  color: #ffffff;
+  margin: 2px 0 4px;
+  letter-spacing: -0.3px;
+}
+
+.ultimateRewardSub {
+  color: #e2d9fc;
+  font-size: 0.88rem;
+  margin: 0;
+  max-width: 600px;
+}
+
+.ultimateCheckInBtn {
+  background: linear-gradient(135deg, #ff9100, #ff6200);
+  color: #ffffff;
+  font-weight: 900;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(255, 123, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+.ultimateCheckInBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(255, 123, 0, 0.6);
+}
+
+/* 7 Daily Reward Cards Grid */
+.pdfRewardGrid7 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 600px) {
+  .pdfRewardGrid7 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pdfRewardGrid7 {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 14px;
+  }
+}
+
+.pdfRewardCard {
+  background: linear-gradient(145deg, rgba(23, 14, 53, 0.85), rgba(15, 8, 38, 0.95));
+  border: 1.5px solid rgba(139, 92, 246, 0.28);
+  border-radius: 20px;
+  padding: 18px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 180px;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pdfRewardCard:hover {
+  transform: translateY(-4px);
+  border-color: #ff9100;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+}
+
+.pdfCardToday {
+  background: linear-gradient(145deg, rgba(255, 145, 0, 0.2), rgba(30, 15, 66, 0.95));
+  border-color: #ff9100;
+  box-shadow: 0 0 25px rgba(255, 145, 0, 0.35), inset 0 0 15px rgba(255, 145, 0, 0.15);
+  transform: scale(1.03);
+}
+
+.pdfCardClaimed {
+  border-color: rgba(16, 185, 129, 0.45);
+  background: linear-gradient(145deg, rgba(16, 185, 129, 0.12), rgba(14, 8, 36, 0.95));
+}
+
+.pdfCardVip {
+  border-color: rgba(255, 215, 0, 0.5);
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.15), rgba(24, 12, 58, 0.95));
+}
+
+.cardTopBadgeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.dayBadgePill {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #c4b5fd;
+}
+
+.badgeVip {
+  background: #ffd700;
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 1000;
+  padding: 2px 7px;
+  border-radius: 8px;
+}
+
+.badgeGiftCard {
+  background: rgba(6, 182, 212, 0.2);
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  color: #22d3ee;
+  font-size: 0.62rem;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+.badgeToday {
+  background: #ff9100;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 8px;
+}
+
+.badgeClaimed {
+  color: #10b981;
+}
+
+.badgeLocked {
+  color: #6b6287;
+}
+
+.cardIconHolder {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+}
+
+.cardRewardTitle {
+  font-size: 1.05rem;
+  font-weight: 1000;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 2px;
+}
+
+.cardRewardSubtitle {
+  font-size: 0.74rem;
+  color: #ffd700;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.cardActionContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.claimCardBtn {
+  background: linear-gradient(135deg, #ff9100, #ff6200);
+  color: #ffffff;
+  border: none;
+  font-weight: 900;
+  font-size: 0.76rem;
+  padding: 6px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 4px 12px rgba(255, 123, 0, 0.4);
+  transition: transform 0.15s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.claimCardBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 123, 0, 0.6);
+}
+
+.claimedTextStatus {
+  color: #10b981;
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.lockedTextStatus {
+  color: #6b6287;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* ========================================================= */
+/* ✦ WHY MAINTAIN YOUR STREAK? 4 BENEFIT PILLARS             */
+/* ========================================================= */
+.whyMaintainBox {
+  background: linear-gradient(145deg, rgba(21, 13, 51, 0.9), rgba(15, 8, 38, 0.95));
+  border: 1.5px solid rgba(139, 92, 246, 0.3);
+  border-radius: 26px;
+  padding: 26px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.whyHeading {
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: #c4b5fd;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.whyGrid4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .whyGrid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .whyGrid4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.whyItem {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.whyItem:hover {
+  border-color: rgba(255, 145, 0, 0.4);
+  transform: translateY(-3px);
+  background: rgba(139, 92, 246, 0.12);
+}
+
+.whyItemIconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.whyItemTitle {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.whyItemDesc {
+  font-size: 0.78rem;
+  color: #b3a6d4;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Trust Footer Strip */
+.trustFooterStrip {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1.5px solid rgba(139, 92, 246, 0.25);
+  border-radius: 18px;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.trustLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c4b5fd;
+  font-size: 0.85rem;
+}
+
+.vrBadgeSmall {
+  background: #ff9100;
+  color: #000;
+  font-weight: 1000;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.trustVerifyBtn {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #10b981;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.trustVerifyBtn:hover {
+  background: rgba(16, 185, 129, 0.3);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ========================================================= */
+/* 🎮 GAMIFIED INTERACTIVE HUB STAGE                         */
+/* ========================================================= */
+.gamifiedHubSection {
+  padding: 0 36px 36px;
+}
+
+.hubSwitcherTabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+  overflow-x: auto;
+}
+
+.hubTabBtn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #b3a6d4;
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 10px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.hubTabBtn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hubTabActive {
+  color: #ffffff !important;
+  background: rgba(139, 92, 246, 0.25) !important;
+  border-color: rgba(139, 92, 246, 0.5) !important;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.3);
+}
+
+.mascotStageCard {
+  background: linear-gradient(145deg, rgba(28, 16, 64, 0.9), rgba(16, 9, 41, 0.95));
+  border: 1.5px solid rgba(139, 92, 246, 0.35);
+  border-radius: 28px;
+  padding: 36px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5);
+}
+
+.mascotAuraGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 123, 0, 0.22) 0%, rgba(139, 92, 246, 0.15) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.mascotAnimation {
+  animation: floatMascot 3s ease-in-out infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes floatMascot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.mascotStreakNumber {
+  font-size: 3.6rem;
+  font-weight: 1000;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 20px rgba(255, 123, 0, 0.5);
+}
+
+.mascotStreakSub {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #ffd700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.questsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.questCard, .friendsCard, .reviewInnerCard {
+  background: linear-gradient(145deg, rgba(24, 15, 56, 0.9), rgba(16, 9, 41, 0.95));
+  border: 1.5px solid rgba(139, 92, 246, 0.3);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.reviewStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quadStatBox {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+}
+
+.quadStatLabel {
+  font-size: 0.72rem;
+  color: #9c94b8;
+}
+
+/* ========================================================= */
+/* 📱 MOBILE BOTTOM NAVIGATION BAR                           */
+/* ========================================================= */
+.mobileBottomNav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(14, 8, 33, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1.5px solid rgba(139, 92, 246, 0.3);
+  padding: 10px 18px;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 899px) {
+  .mobileBottomNav {
+    display: flex;
+  }
+}
+
+.bottomNavItem {
+  background: transparent;
+  border: none;
+  color: #9c94b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bottomNavItemActive {
+  color: #ff9100 !important;
+}
+
+.bottomCenterExploreBtn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9100, #ff6200);
+  color: #ffffff;
+  border: 3px solid #0d0722;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 123, 0, 0.6);
+  margin-top: -24px;
+  transition: transform 0.2s ease;
+}
+
+.bottomCenterExploreBtn:hover {
+  transform: scale(1.1);
+}
+
+/* ========================================================= */
+/* 📱 MOBILE FEATURE HUB DRAWER                              */
+/* ========================================================= */
+.featureDrawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+}
+
+.featureDrawerCard {
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #11092a;
+  border-top: 2px solid rgba(139, 92, 246, 0.4);
+  border-radius: 28px 28px 0 0;
+  padding: 16px 20px 40px;
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.9);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.drawerGrabHandle {
+  width: 44px;
+  height: 5px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 0 auto 16px;
+}
+
+.featureDrawerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.featureDrawerItem {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1.5px solid rgba(139, 92, 246, 0.25);
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.featureDrawerItem:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: #ff9100;
+  transform: translateY(-2px);
+}
+
+.featureIconCircle {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.featureItemTitle {
+  font-size: 0.88rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.featureItemSub {
+  font-size: 0.72rem;
+  color: #a78bfa;
+}
+
+.drawerUserBanner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.15));
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: all 0.2s ease;
+}
+
+.drawerUserBanner:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: #10b981;
+}
+
+.drawerGuestBanner {
+  background: linear-gradient(135deg, rgba(255, 145, 0, 0.15), rgba(139, 92, 246, 0.2));
+  border: 1.5px solid rgba(255, 145, 0, 0.35);
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+/* ========================================================= */
+/* 📱 ULTRA-SMOOTH MOBILE & TABLET MEDIA QUERIES             */
+/* ========================================================= */
+@media (max-width: 1100px) {
+  .tokenSubtext {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .topHeaderBar {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .brandName {
+    font-size: 1.15rem;
+  }
+
+  .brandLogoBox, .hamburgerMenuBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .headerRightActions {
+    gap: 6px;
+  }
+
+  .tokenPill, .streakFlamePill {
+    padding: 5px 9px;
+  }
+
+  .tokenAmount, .streakPillCount {
+    font-size: 0.78rem;
+  }
+
+  .registerHeaderBtn, .loginHeaderBtn {
+    padding: 4px 9px;
+    font-size: 0.74rem;
+  }
+
+  .shieldBtn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .userProfilePill {
+    padding: 3px 8px 3px 3px;
+    font-size: 0.75rem;
+  }
+
+  .welcomeBanner {
+    padding: 22px 16px 14px;
+  }
+
+  .welcomeTitle {
+    font-size: 1.7rem;
+  }
+
+  .statCardsGrid, .checkInSystemCard, .surpriseDropCard, .pdfStreakSection, .gamifiedHubSection {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .statCardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .statBigValue {
+    font-size: 1.7rem;
+  }
+
+  .daysHorizontalTrack {
+    gap: 6px;
+  }
+
+  .dayPillNode {
+    padding: 8px 2px 6px;
+  }
+
+  .dayCheckBadge {
+    width: 22px;
+    height: 22px;
+    font-size: 0.68rem;
+  }
+
+  .surpriseMainRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .surprisePerksGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ultimateBannerPdf {
+    padding: 18px 16px;
+  }
+
+  .ultimateRewardTitle {
+    font-size: 1.3rem;
+  }
+
+  .systemStatusBar {
+    padding: 6px 16px;
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .topHeaderBar {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .headerLeftGroup {
+    gap: 6px;
+  }
+
+  .brandLogoBox {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hamburgerMenuBtn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brandName {
+    font-size: 1.05rem;
+  }
+
+  .tokenPill {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+
+  .streakFlamePill {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+
+  .streakPillCount {
+    font-size: 0.74rem;
+  }
+
+  .shieldBtn {
+    display: none; /* Accessible in All Features Drawer */
+  }
+
+  .userProfilePill {
+    display: none; /* Accessible in All Features Drawer */
+  }
+
+  .loginHeaderBtn {
+    display: none; /* Keep Register prominent on tiny mobile header */
+  }
+
+  .registerHeaderBtn {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+
+  .loggedInUserName {
+    display: none;
+  }
+
+  /* 7-Day Active Streak Card Responsive Rules */
+  .checkInSystemCard, .surpriseDropCard, .pdfStreakSection, .gamifiedHubSection {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    width: calc(100% - 16px);
+  }
+
+  .checkInTopRow {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .checkInTitleBox {
+    gap: 10px;
+  }
+
+  .streakBigTitle {
+    font-size: 1.15rem;
+  }
+
+  .flameIconBox {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .streakMilestoneBadges {
+    gap: 6px;
+    width: 100%;
+    display: flex;
+  }
+
+  .longestBadge, .nextMilestoneBadge {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .daysHorizontalTrack {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 3px;
+    margin-bottom: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dayPillNode {
+    padding: 5px 1px 4px;
+    border-radius: 8px;
+    gap: 2px;
+    border-width: 1px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dayPillHeader {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 0px;
+    width: 100%;
+  }
+
+  .dayWord {
+    display: none;
+  }
+
+  .dayPillLabel {
+    font-size: 0.54rem;
+    line-height: 1.1;
+    font-weight: 900;
+  }
+
+  .dayPillIndex {
+    font-size: 0.5rem;
+    line-height: 1.1;
+  }
+
+  .dayCheckBadge {
+    width: 18px;
+    height: 18px;
+    font-size: 0.58rem;
+  }
+
+  .fullRewardText {
+    display: none;
+  }
+
+  .shortRewardText {
+    display: inline;
+    font-size: 0.52rem;
+    font-weight: 900;
+  }
+
+  .dayPillRewardTag {
+    font-size: 0.52rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+  }
+
+  .claimCtaBanner {
+    padding: 12px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 16px;
+  }
+
+  .ctaLeftInfo {
+    gap: 10px;
+  }
+
+  .ctaZapIconBox {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ctaAvailableTag {
+    font-size: 0.64rem;
+  }
+
+  .ctaRewardName {
+    font-size: 0.95rem;
+  }
+
+  .claimRewardActionBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandName span:last-child {
+    display: none; /* Hide 'Rewards' word on tiny screens so header fits perfectly */
+  }
+
+  .statCardsGrid {
+    grid-template-columns: 1fr;
+    margin-left: 8px;
+    margin-right: 8px;
+    width: calc(100% - 16px);
+  }
+
+  .pdfRewardGrid7 {
+    grid-template-columns: 1fr;
+  }
+
+  .welcomeBanner {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: calc(100% - 16px);
+    padding: 18px 12px 14px;
+    border-radius: 20px;
+  }
+
+  .welcomeTitle {
+    font-size: 1.4rem;
+  }
+
+  .daysHorizontalTrack {
+    gap: 2px;
+  }
+
+  .dayPillNode {
+    padding: 4px 1px 3px;
+    border-radius: 7px;
+  }
+
+  .dayPillLabel {
+    font-size: 0.52rem;
+  }
+
+  .dayPillIndex {
+    font-size: 0.48rem;
+  }
+
+  .dayCheckBadge {
+    width: 17px;
+    height: 17px;
+    font-size: 0.54rem;
+  }
+
+  .shortRewardText {
+    font-size: 0.48rem;
+  }
+
+  .dayPillRewardTag {
+    font-size: 0.48rem;
+  }
+}

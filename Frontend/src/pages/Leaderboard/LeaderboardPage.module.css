@@ -1,0 +1,188 @@
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 100px 24px 40px;
+  animation: pageFadeIn 0.3s ease-out;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.trophyIconBox {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.subtitle {
+  color: #9c94b8;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.userRankPill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  color: #ded7f7;
+}
+
+.podiumGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+  align-items: flex-end;
+}
+
+@media (min-width: 768px) {
+  .podiumGrid {
+    grid-template-columns: 1fr 1.15fr 1fr;
+  }
+}
+
+.podiumCard {
+  background: rgba(20, 11, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 24px;
+  text-align: center;
+}
+
+.rank1 {
+  background: linear-gradient(150deg, #2a1452, #13062c);
+  border: 2px solid #ffd700;
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.25);
+  padding: 32px 24px;
+}
+
+.goldCrown {
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
+.podiumBadgeGold {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffd700, #ff9900);
+  color: #0b071e;
+  font-weight: 900;
+  font-size: 0.75rem;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.podiumBadge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ded7f7;
+  font-weight: 800;
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.podiumNameBig {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.podiumName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.podiumStreakGold {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #ffd700;
+}
+
+.podiumStreak {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffaa00;
+}
+
+.tableCard {
+  background: rgba(18, 10, 36, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px 16px;
+  color: #8c83a8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.9rem;
+}
+
+.userRow {
+  background: rgba(124, 77, 255, 0.12);
+  border-left: 3px solid #ffd700;
+}
+
+.youTag {
+  background: #ffd700;
+  color: #0b071e;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+.tierBadge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cfc7eb;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

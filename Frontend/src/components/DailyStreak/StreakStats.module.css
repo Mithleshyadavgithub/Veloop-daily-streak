@@ -1,0 +1,104 @@
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .statsRow {
+    gap: 16px;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+}
+
+.statBox {
+  background: rgba(22, 12, 48, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 12px 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .statBox {
+    border-radius: 20px;
+    padding: 18px 20px;
+  }
+}
+
+.headerLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.label {
+  color: #9c94b8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 0.8rem;
+  }
+}
+
+.iconPurple {
+  color: #a855f7;
+}
+
+.iconGreen {
+  color: #10b981;
+}
+
+.iconGold {
+  color: #ffd700;
+}
+
+.valueWhite {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .valueWhite {
+    font-size: 1.8rem;
+  }
+}
+
+.valueGreen {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #10b981;
+}
+
+@media (min-width: 768px) {
+  .valueGreen {
+    font-size: 1.8rem;
+  }
+}
+
+.valueGold {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #ffd700;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .valueGold {
+    font-size: 1.8rem;
+  }
+}

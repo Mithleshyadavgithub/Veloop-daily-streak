@@ -1,0 +1,170 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 1, 10, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: overlayFadeIn 0.25s ease-out;
+}
+
+.modalCard {
+  background: linear-gradient(145deg, #1d0f42, #100626);
+  border: 2px solid #ffd700;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 215, 0, 0.35);
+  border-radius: 28px;
+  max-width: 480px;
+  width: 100%;
+  padding: 36px 30px;
+  text-align: center;
+  position: relative;
+  animation: celebratePop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #c4bcd8;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.iconCircle {
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.25), transparent 70%);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.4);
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.badgeSuccess {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #10b981;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.rewardTitle {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 4px;
+  background: linear-gradient(135deg, #ffffff, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #9c94b8;
+  font-size: 0.9rem;
+  margin-bottom: 22px;
+}
+
+.receiptBox {
+  background: rgba(12, 6, 28, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.receiptRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.85rem;
+}
+
+.receiptRow:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.txId {
+  font-family: monospace;
+  color: #7c4dff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background: rgba(124, 77, 255, 0.15);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.continueBtn {
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #0b071e;
+  border: none;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 14px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+.continueBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.55);
+}
+
+.walletBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cfc7eb;
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.walletBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes celebratePop {
+  from { opacity: 0; transform: scale(0.8) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}

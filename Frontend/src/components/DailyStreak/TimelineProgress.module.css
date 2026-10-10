@@ -1,0 +1,141 @@
+.timelineContainer {
+  background: linear-gradient(150deg, #150b2e, #0e0621);
+  border: 1px solid rgba(147, 51, 234, 0.25);
+  border-radius: 24px;
+  padding: 26px 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #9c94b8;
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.progressPill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  color: #ffd700;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.progressTrackWrapper {
+  position: relative;
+  margin: 10px 0 24px;
+}
+
+.trackLine {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.trackFill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #ffd700);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.nodesContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.nodeItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.nodeCircle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nodeClaimed {
+  background: #10b981;
+  color: #0b071e;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.5);
+}
+
+.nodeToday {
+  background: linear-gradient(135deg, #ffd700, #ff9900);
+  color: #0b071e;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.pulseFlame {
+  animation: pulseFlame 1.5s infinite;
+}
+
+.nodeLocked {
+  background: #180d35;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  color: #6b7280;
+}
+
+.dayLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ded7f7;
+}
+
+.rewardLabel {
+  font-size: 0.72rem;
+  color: #9c94b8;
+  font-weight: 500;
+}
+
+.motivationStrip {
+  text-align: center;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  color: #ffd700;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+@keyframes pulseFlame {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}

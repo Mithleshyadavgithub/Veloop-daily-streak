@@ -1,0 +1,159 @@
+{
+  "info": {
+    "name": "VELoop Rewards - Daily Streak & Rewards API",
+    "description": "Comprehensive Postman test collection covering all 122 checklist items from the Full-Stack MERN specification.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "2. Get Daily Streak Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/daily-streak",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "daily-streak"]
+        }
+      }
+    },
+    {
+      "name": "3. Claim Daily Streak Reward (Normal)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"day\": 1\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/daily-streak/claim",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "daily-streak", "claim"]
+        }
+      }
+    },
+    {
+      "name": "4. Duplicate Claim Attack Test (Should Fail)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"day\": 1\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/daily-streak/claim",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "daily-streak", "claim"]
+        }
+      }
+    },
+    {
+      "name": "5. Fake Reward Injection Attack Test (Should Fail/Ignore)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"day\": 2,\n  \"reward\": 1000000,\n  \"currency\": \"VES\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/daily-streak/claim",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "daily-streak", "claim"]
+        }
+      }
+    },
+    {
+      "name": "6. Skip to Day 7 Attack Test (Should Fail)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"day\": 7\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/daily-streak/claim",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "daily-streak", "claim"]
+        }
+      }
+    },
+    {
+      "name": "7. Advance Server Time (+24h)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"hours\": 24\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/testing/time-travel",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "testing", "time-travel"]
+        }
+      }
+    },
+    {
+      "name": "8. Get Wallet & Transactions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/wallet",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "wallet"]
+        }
+      }
+    },
+    {
+      "name": "9. Reset Streak to Day 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"USER_MEMBER_9921\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/testing/reset",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "testing", "reset"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5001"
+    }
+  ]
+}

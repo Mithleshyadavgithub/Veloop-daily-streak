@@ -1,0 +1,426 @@
+.hubContainer {
+  margin-top: 14px;
+  margin-bottom: 24px;
+}
+
+.subViewTabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.tabBtn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #8c83a8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 8px 6px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tabActive {
+  background: linear-gradient(135deg, rgba(124, 77, 255, 0.4), rgba(45, 15, 80, 0.6));
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(124, 77, 255, 0.25);
+}
+
+/* SCREEN 2: STREAK CELEBRATION CARD */
+.streakCard {
+  background: radial-gradient(circle at 50% 25%, rgba(118, 255, 3, 0.15), transparent 70%),
+              linear-gradient(170deg, #13082a, #0b041c);
+  border: 1.5px solid rgba(118, 255, 3, 0.35);
+  border-radius: 26px;
+  padding: 24px 18px;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(118, 255, 3, 0.15);
+}
+
+.mascotWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.floatMascot {
+  animation: floatMascot 3s infinite ease-in-out;
+}
+
+.streakNumberBox {
+  margin-bottom: 18px;
+}
+
+.streakBigNumber {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #76ff03;
+  line-height: 1;
+  margin: 0;
+  text-shadow: 0 0 25px rgba(118, 255, 3, 0.6);
+  letter-spacing: -1px;
+}
+
+.streakSubtitle {
+  color: #c4bcd8;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.weekCirclesRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 0 6px;
+}
+
+.dayCircleCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.dayCharLabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #7e749c;
+}
+
+.circleNode {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleDone {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.circleActive {
+  background: #76ff03;
+  box-shadow: 0 0 18px rgba(118, 255, 3, 0.8);
+  transform: scale(1.15);
+}
+
+.circlePending {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.streakActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shareGreenBtn {
+  background: #76ff03;
+  color: #0b071e;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 13px;
+  border-radius: 14px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(118, 255, 3, 0.4);
+}
+
+.claimGreenBtn {
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #0b071e;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 13px;
+  border-radius: 14px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.4);
+}
+
+.continueOutlineBtn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c4bcd8;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 11px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* SCREEN 1: QUESTS CARD */
+.questsCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.questSection {
+  background: linear-gradient(150deg, #190b38, #0e0524);
+  border: 1px solid rgba(147, 51, 234, 0.3);
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.questTitleBadge {
+  color: #76ff03;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.questDaysLeft {
+  color: #9c94b8;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.challengeBox {
+  margin-top: 8px;
+}
+
+.greenRatio {
+  color: #76ff03;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.friendsQuestBox {
+  background: linear-gradient(150deg, #1c0e3d, #100626);
+  border: 1px solid rgba(124, 77, 255, 0.35);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.friendsTag {
+  color: #e9d5ff;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+}
+
+.avatarsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.scoreRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.dotGreen {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #76ff03;
+}
+
+.dotPink {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff4081;
+}
+
+.questButtonsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.nudgeBtn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.countBadge {
+  color: #ffd700;
+  margin-left: 4px;
+}
+
+.openGiftBtn {
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #0b071e;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.giftClaimedBtn {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* SCREEN 3: 2026 REVIEW CARD */
+.reviewCard {
+  text-align: center;
+}
+
+.reviewTitle {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.greenText {
+  color: #76ff03;
+}
+
+.reviewInnerCard {
+  background: linear-gradient(160deg, #1a0d38, #0e0422);
+  border: 1.5px solid rgba(118, 255, 3, 0.3);
+  border-radius: 24px;
+  padding: 20px 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.duoBrandRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.veloopBrandText {
+  color: #76ff03;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.yearTag {
+  color: #9c94b8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.mascotBannerWrapper {
+  position: relative;
+  display: inline-block;
+  margin: 8px auto 14px;
+}
+
+.year2026Badge {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #0b071e;
+  font-weight: 900;
+  font-size: 1.1rem;
+  padding: 2px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.topPercentageText {
+  color: #ded7f7;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.statsQuadGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.quadBox {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 10px;
+  text-align: center;
+}
+
+.quadValue {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.quadLabel {
+  font-size: 0.65rem;
+  color: #9c94b8;
+}
+
+.shareRewardBtn {
+  width: 100%;
+  background: #76ff03;
+  color: #0b071e;
+  border: none;
+  font-weight: 900;
+  font-size: 0.82rem;
+  padding: 12px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(118, 255, 3, 0.4);
+}
+
+.progressBarBg {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progressBarFillGreen {
+  height: 100%;
+  background: linear-gradient(90deg, #76ff03, #00e676);
+  border-radius: 8px;
+}
+
+@keyframes floatMascot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}

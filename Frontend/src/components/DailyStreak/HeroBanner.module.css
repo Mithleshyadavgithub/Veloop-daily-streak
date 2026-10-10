@@ -1,0 +1,197 @@
+.heroCard {
+  background: linear-gradient(150deg, #180d35, #110826);
+  border: 1px solid rgba(147, 51, 234, 0.35);
+  border-radius: 22px;
+  padding: 20px 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .heroCard {
+    border-radius: 28px;
+    padding: 30px;
+  }
+}
+
+.mobileArtRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.calendarMiniArt {
+  position: relative;
+}
+
+.calSheet {
+  width: 44px;
+  height: 44px;
+  background: #2a155c;
+  border: 1.5px solid #a855f7;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.calTopBar {
+  width: 100%;
+  height: 10px;
+  background: #7c4dff;
+}
+
+.calBody {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calCheck {
+  color: #ffd700;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.calCoinBadge {
+  position: absolute;
+  bottom: -4px;
+  right: -6px;
+  font-size: 0.9rem;
+}
+
+.giftMiniArt {
+  filter: drop-shadow(0 4px 10px rgba(124, 77, 255, 0.4));
+}
+
+.titleSection {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .titleSection {
+    text-align: left;
+  }
+}
+
+.heroTitle {
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+}
+
+.heroTitleHighlight {
+  background: linear-gradient(135deg, #ffd700, #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  color: #9c94b8;
+  font-size: 0.82rem;
+  margin: 0;
+  line-height: 1.35;
+}
+
+@media (min-width: 768px) {
+  .heroSubtitle {
+    font-size: 0.92rem;
+  }
+}
+
+.pillsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.streakBadge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(30, 16, 62, 0.9);
+  border: 1px solid rgba(255, 153, 0, 0.4);
+  color: #ffaa00;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 18px;
+}
+
+.flameIcon {
+  filter: drop-shadow(0 0 4px rgba(255, 100, 0, 0.6));
+}
+
+.calendarBtn {
+  background: rgba(30, 16, 62, 0.9);
+  border: 1px solid rgba(147, 51, 234, 0.35);
+  color: #c4bcd8;
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.calendarArrow {
+  font-size: 0.85rem;
+  color: #9c94b8;
+}
+
+.claimHeroButton {
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #0b071e;
+  font-weight: 800;
+  font-size: 0.92rem;
+  border: none;
+  border-radius: 14px;
+  padding: 13px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.35);
+  width: 100%;
+}
+
+.lockedTimerBanner {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #cfc7eb;
+  font-size: 0.82rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.timerDisplay {
+  color: #ffd700;
+  font-family: monospace;
+  font-size: 1rem;
+}

@@ -1,0 +1,328 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 5, 20, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalCard {
+  background: linear-gradient(180deg, #1f1438 0%, #130a24 100%);
+  border: 1.5px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(168, 85, 247, 0.2);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 28px 24px;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #c4b5fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.closeBtn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.5);
+  transform: rotate(90deg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  color: #ffd700;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.titleAccent {
+  background: linear-gradient(135deg, #ffd700 0%, #ff9100 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #c4b5fd;
+  font-size: 0.92rem;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Potential Spotlight Banner */
+.spotlightBanner {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 123, 0, 0.15) 100%);
+  border: 1.5px solid rgba(255, 215, 0, 0.45);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.spotlightLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spotlightIcon {
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.spotlightTag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ffd700;
+  letter-spacing: 0.06em;
+}
+
+.spotlightAmount {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.spotlightPill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+/* Steps */
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.stepCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  gap: 14px;
+  transition: all 0.2s ease;
+}
+
+.stepCard:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stepCardHighlight {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+}
+
+.stepNumberBadge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.25);
+  border: 1.5px solid #a855f7;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badgeGold {
+  background: rgba(255, 215, 0, 0.25);
+  border-color: #ffd700;
+  color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.stepDesc {
+  font-size: 0.86rem;
+  color: #d1d5db;
+  margin: 4px 0 8px 0;
+  line-height: 1.45;
+}
+
+.stepRewardPills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.coinPill {
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #fef08a;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* 3 Milestone Gift Cards Grid */
+.giftCardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.giftCardItem {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 10px;
+  padding: 10px 8px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.giftCardItem:hover {
+  transform: translateY(-2px);
+}
+
+.giftCardVip {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 145, 0, 0.2) 100%);
+  border: 1.5px solid #ffd700;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.25);
+}
+
+.giftCardTag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #ffd700;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.giftCardPrice {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.giftCardLabel {
+  font-size: 0.72rem;
+  color: #e2e8f0;
+  margin-top: 2px;
+}
+
+/* Footer Action */
+.footerActions {
+  text-align: center;
+}
+
+.startEarningBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #ff9100 0%, #ff5500 50%, #d946ef 100%);
+  border: none;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 14px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 25px rgba(255, 107, 0, 0.45);
+  transition: all 0.2s ease;
+}
+
+.startEarningBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255, 107, 0, 0.6);
+  filter: brightness(1.1);
+}
+
+@media (max-width: 576px) {
+  .modalCard {
+    padding: 20px 16px;
+  }
+  .title {
+    font-size: 1.35rem;
+  }
+  .giftCardGrid {
+    grid-template-columns: 1fr;
+  }
+}

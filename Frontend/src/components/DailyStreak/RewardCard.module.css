@@ -1,0 +1,237 @@
+.cardContainer {
+  background: rgba(22, 13, 44, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 10px 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 155px;
+  position: relative;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(6px);
+}
+
+@media (min-width: 768px) {
+  .cardContainer {
+    border-radius: 20px;
+    padding: 16px 12px;
+    min-height: 200px;
+  }
+}
+
+.cardHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.dayText {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #9c94b8;
+}
+
+@media (min-width: 768px) {
+  .dayText {
+    font-size: 0.8rem;
+  }
+}
+
+.badgeToday {
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #0b071e;
+  font-size: 0.55rem;
+  font-weight: 900;
+  padding: 1px 5px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+
+.badgeNormal {
+  background: rgba(124, 77, 255, 0.25);
+  border: 1px solid rgba(147, 51, 234, 0.4);
+  color: #e9d5ff;
+  font-size: 0.55rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.claimedCheckCircle {
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 50%;
+  padding: 1px;
+}
+
+.iconSlot {
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+}
+
+@media (min-width: 768px) {
+  .iconSlot {
+    margin: 8px 0;
+    min-height: 48px;
+  }
+}
+
+.labelsSection {
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.dailyRewardSub {
+  font-size: 0.58rem;
+  color: #7e749c;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+  .dailyRewardSub {
+    font-size: 0.68rem;
+  }
+}
+
+.mainAmount {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 1px 0;
+}
+
+@media (min-width: 768px) {
+  .mainAmount {
+    font-size: 1.45rem;
+  }
+}
+
+.greenAmount {
+  color: #10b981;
+}
+
+.currencySub {
+  font-size: 0.58rem;
+  color: #9c94b8;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+  .currencySub {
+    font-size: 0.72rem;
+  }
+}
+
+.actionFooter {
+  width: 100%;
+}
+
+/* Today Card Active State */
+.cardToday {
+  background: linear-gradient(160deg, rgba(65, 29, 132, 0.95), rgba(28, 12, 58, 0.95));
+  border: 1.5px solid #ffd700;
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.35);
+}
+
+.claimBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #0b071e;
+  border: none;
+  font-weight: 900;
+  font-size: 0.68rem;
+  padding: 6px 4px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+@media (min-width: 768px) {
+  .claimBtn {
+    font-size: 0.82rem;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+}
+
+/* Claimed State */
+.cardClaimed {
+  background: rgba(18, 10, 36, 0.65);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.claimedPill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #10b981;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 2px;
+  background: rgba(16, 185, 129, 0.12);
+  border-radius: 8px;
+}
+
+/* Locked State */
+.cardLocked {
+  opacity: 0.8;
+}
+
+.lockedPill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #6b7280;
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 4px 2px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+/* Missed State */
+.cardMissed {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.missedPill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #ef4444;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 4px 2px;
+  background: rgba(239, 68, 68, 0.12);
+  border-radius: 8px;
+}
+
+.activeAsset {
+  animation: floatPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes floatPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}

@@ -1,0 +1,57 @@
+.gridContainer {
+  margin-top: 14px;
+  margin-bottom: 32px;
+}
+
+.dividerStrip {
+  text-align: center;
+  color: #ffd700;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .dividerStrip {
+    font-size: 0.88rem;
+    margin-bottom: 22px;
+  }
+}
+
+/* Row 1: 4 Cards on mobile and desktop */
+.gridRowTop {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .gridRowTop {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Row 2: 3 Cards centered on mobile */
+.gridRowBottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .gridRowBottom {
+    gap: 16px;
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gridRowBottom {
+    max-width: 75%;
+  }
+}

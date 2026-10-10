@@ -1,0 +1,122 @@
+.container {
+  margin-top: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.subTag {
+  color: #9c94b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.taskCard {
+  background: rgba(20, 11, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.taskCard:hover {
+  background: rgba(28, 15, 58, 0.85);
+  border-color: rgba(147, 51, 234, 0.35);
+  transform: translateX(4px);
+}
+
+.taskDone {
+  opacity: 0.65;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.taskLeft {
+  max-width: 600px;
+}
+
+.taskTag {
+  color: #a855f7;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  margin-bottom: 4px;
+}
+
+.taskTitle {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.taskDesc {
+  color: #9c94b8;
+  font-size: 0.82rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.taskRight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rewardBadge {
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #ffd700;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 12px;
+}
+
+.actionBtn {
+  background: rgba(124, 77, 255, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover:not(:disabled) {
+  background: #7c4dff;
+  box-shadow: 0 4px 14px rgba(124, 77, 255, 0.4);
+}
+
+.btnDone {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #10b981;
+  cursor: default;
+}
