@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ClaimSuccessModal.module.css';
 import { Sparkles, CheckCircle2, ArrowRight, ShieldCheck, X } from 'lucide-react';
 import { useStreak } from '../../context/StreakContext';
-import { CrownIcon, CoinStackIcon, AmazonGiftCardIcon, GiftBoxIcon } from '../../assets/rewardIcons';
+import { crownImg, coinImg, giftCardImg, giftBoxImg } from '../../assets/streakAssets';
 
 export default function ClaimSuccessModal() {
   const { claimSuccessModal, setClaimSuccessModal, wallet, countdown, setActiveTab } = useStreak();
@@ -12,11 +12,13 @@ export default function ClaimSuccessModal() {
   const { reward, transaction, day } = claimSuccessModal;
 
   const renderRewardIcon = () => {
-    if (!reward) return <CoinStackIcon size={64} />;
-    if (reward.assetType === 'crown' || reward.day === 7) return <CrownIcon size={64} />;
-    if (reward.assetType === 'gift-card' || reward.rewardType === 'GIFT_CARD') return <AmazonGiftCardIcon size={64} />;
-    if (reward.assetType === 'gift-box') return <GiftBoxIcon size={64} />;
-    return <CoinStackIcon size={64} />;
+    let img = coinImg;
+    if (reward) {
+      if (reward.assetType === 'crown' || reward.day === 7) img = crownImg;
+      else if (reward.assetType === 'gift-card' || reward.rewardType === 'GIFT_CARD') img = giftCardImg;
+      else if (reward.assetType === 'gift-box' || reward.day === 4) img = giftBoxImg;
+    }
+    return <img src={img} alt="Reward" style={{ width: 84, height: 84, objectFit: 'contain', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.6))' }} />;
   };
 
   return (

@@ -9,6 +9,8 @@ import WalletPage from './pages/Wallet/WalletPage';
 import LeaderboardPage from './pages/Leaderboard/LeaderboardPage';
 import { AlertCircle, CheckCircle2, Info, ChevronLeft } from 'lucide-react';
 
+import DailyStreakPage from './pages/DailyStreak/DailyStreakPage';
+
 function AppContent() {
   const { activeTab, setActiveTab, toastMessage } = useStreak();
 
@@ -19,9 +21,9 @@ function AppContent() {
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 16px', width: '100%' }}>
           <button 
             className="btn btn-sm btn-outline-info mb-3 d-flex align-items-center gap-1"
-            onClick={() => setActiveTab('dashboard')}
+            onClick={() => setActiveTab('streak')}
           >
-            <ChevronLeft size={16} /> Back to Gamified Hub
+            <ChevronLeft size={16} /> Back to Daily Streak
           </button>
           <WalletPage />
         </div>
@@ -31,16 +33,21 @@ function AppContent() {
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 16px', width: '100%' }}>
           <button 
             className="btn btn-sm btn-outline-info mb-3 d-flex align-items-center gap-1"
-            onClick={() => setActiveTab('dashboard')}
+            onClick={() => setActiveTab('streak')}
           >
-            <ChevronLeft size={16} /> Back to Gamified Hub
+            <ChevronLeft size={16} /> Back to Daily Streak
           </button>
           <LeaderboardPage />
         </div>
       )}
 
-      {/* Primary Gamified Duolingo UI (Default & Main Home) */}
-      {(activeTab === 'dashboard' || activeTab === 'streak' || activeTab === 'tasks') && (
+      {/* Primary View: Dedicated Official Daily Streak System */}
+      {activeTab === 'streak' && (
+        <DailyStreakPage />
+      )}
+
+      {/* Gamified Hub & Features: When user navigates to Dashboard */}
+      {(activeTab === 'dashboard' || activeTab === 'tasks') && (
         <GamifiedDuolingoApp />
       )}
 

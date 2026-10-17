@@ -1,50 +1,64 @@
 import React from 'react';
 import styles from './WhyStreak.module.css';
-import { Flame, TrendingUp, Gift, ShieldCheck } from 'lucide-react';
+import {
+  calendarImg,
+  biggerStreakImg,
+  exclusiveGiftImg,
+  shieldImg
+} from '../../assets/streakAssets';
 
 export default function WhyStreak() {
-  const reasons = [
+  const pillars = [
     {
-      icon: <Flame size={26} color="#FF9900" />,
+      img: calendarImg,
       title: 'Stay Active',
-      desc: 'Keep your streak alive & earn more rewards every single day.'
+      desc: 'Keep your streak alive & earn more!'
     },
     {
-      icon: <TrendingUp size={26} color="#ffd700" />,
+      img: biggerStreakImg,
       title: 'Bigger Streak',
-      desc: 'More consecutive logins unlock higher tier bonuses and multiplier perks.'
+      desc: 'More consecutive logins, bigger rewards!'
     },
     {
-      icon: <Gift size={26} color="#a855f7" />,
+      img: exclusiveGiftImg,
       title: 'Exclusive Rewards',
-      desc: 'Get coins, Amazon gift cards, and VIP celebratory milestones.'
+      desc: 'Get coins, gift cards & special bonuses!'
     },
     {
-      icon: <ShieldCheck size={26} color="#10b981" />,
+      img: shieldImg,
       title: "Don't Miss Out",
-      desc: 'Come back daily to safeguard your streak and prevent auto-reset!'
+      desc: 'Come back every day & unlock all rewards!'
     }
   ];
 
   return (
-    <div className={styles.container}>
-      <div className={styles.sectionHeader}>
-        <span className={styles.headerLine} />
-        <h5 className={styles.sectionTitle}>✦ WHY MAINTAIN YOUR STREAK? ✦</h5>
-        <span className={styles.headerLine} />
+    <section className={styles.whySection}>
+      {/* Title with sparkles */}
+      <div className={styles.titleRow}>
+        <span className={styles.sparkleIcon}>✦</span>
+        <h3 className={styles.sectionTitle}>Why Maintain Your Streak?</h3>
+        <span className={styles.sparkleIcon}>✦</span>
       </div>
 
-      <div className={styles.grid}>
-        {reasons.map((r, idx) => (
-          <div key={idx} className={styles.whyCard}>
-            <div className={styles.iconCircle}>
-              {r.icon}
+      {/* 4 Pillars Grid */}
+      <div className={styles.pillarsGrid}>
+        {pillars.map((item, idx) => (
+          <div key={idx} className={styles.pillarCard}>
+            <div className={styles.iconSlot}>
+              <img
+                src={item.img}
+                alt={item.title}
+                className={styles.pillarImg}
+                loading="lazy"
+              />
             </div>
-            <h6 className={styles.cardTitle}>{r.title}</h6>
-            <p className={styles.cardDesc}>{r.desc}</p>
+            <div className={styles.textContent}>
+              <h4 className={styles.pillarTitle}>{item.title}</h4>
+              <p className={styles.pillarDesc}>{item.desc}</p>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

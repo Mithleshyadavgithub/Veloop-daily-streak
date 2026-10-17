@@ -36,4 +36,18 @@ const getAuditLogs = async (req, res, next) => {
   }
 };
 
-module.exports = { timeTravel, resetStreak, getAuditLogs };
+const resetTime = async (req, res, next) => {
+  try {
+    const normalTime = streakService.resetSimulatedTimeOffset();
+    await logEvent('TIME_OFFSET_RESET', 'SYSTEM_EVALUATOR', null, 'Simulated clock reset back to true real-world server time.');
+    res.json({
+      success: true,
+      message: 'Server time offset reset to real server time.',
+      serverTime: normalTime.toISOString()
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = { timeTravel, resetStreak, getAuditLogs, resetTime };

@@ -1,107 +1,122 @@
 import React from 'react';
 import styles from './RewardCard.module.css';
-import { Lock, CheckCircle2, AlertCircle, ChevronRight } from 'lucide-react';
-import { CrownIcon, CoinStackIcon, AmazonGiftCardIcon, GiftBoxIcon } from '../../assets/rewardIcons';
+import { Lock, Check, ChevronRight } from 'lucide-react';
+import { coinImg, giftBoxImg, giftCardImg, crownImg } from '../../assets/streakAssets';
 import { useStreak } from '../../context/StreakContext';
 
 export default function RewardCard({ reward }) {
   const { initiateClaim, claiming } = useStreak();
 
-  const { day, title, subtitle, status, assetType, badge, rewardType } = reward;
+  const { day, title, subtitle, status, assetType, badge, amount, currency } = reward;
 
   const isToday = status === 'TODAY';
   const isClaimed = status === 'CLAIMED';
   const isLocked = status === 'LOCKED';
-  const isMissed = status === 'MISSED';
+  const isDay7 = day === 7;
 
-  const renderCardIcon = () => {
-    if (assetType === 'crown' || day === 7) {
-      return <CrownIcon size={34} className={isToday ? styles.activeAsset : ''} />;
-    }
-    if (assetType === 'gift-card' || (rewardType === 'GIFT_CARD' && day === 5)) {
-      return <AmazonGiftCardIcon size={32} className={isToday ? styles.activeAsset : ''} />;
-    }
-    if (assetType === 'gift-box' || day === 4) {
-      return <GiftBoxIcon size={32} className={isToday ? styles.activeAsset : ''} />;
-    }
-    return <CoinStackIcon size={32} className={isToday ? styles.activeAsset : ''} />;
+  // Select official 3D asset image based on backend metadata or day
+  const getAsset = () => {
+    if (isDay7 || assetType === 'crown') return crownImg;
+    if (day === 5 || assetType === 'gift-card') return giftCardImg;
+    if (day === 4 || assetType === 'gift-box') return giftBoxImg;
+    return coinImg;
   };
 
-  let cardClasses = styles.cardContainer;
-  if (isToday) cardClasses += ` ${styles.cardToday}`;
-  if (isClaimed) cardClasses += ` ${styles.cardClaimed}`;
-  if (isLocked) cardClasses += ` ${styles.cardLocked}`;
-  if (isMissed) cardClasses += ` ${styles.cardMissed}`;
+  // Determine badge label
+  const renderBadge = () => {
+    if (isClaimed) {
+      return (
+        <span className={styles.badgeCheck}>
+          <Check size={11} strokeWidth={3} />
+        </span>
+      );
+    }
+    if (badge) {
+      const badgeStyle =
+        badge === 'VIP'
+          ? styles.badgeVip
+          : badge === 'Today'
+          ? styles.badgeToday
+          : badge === 'Gift Card'
+          ? styles.badgeGiftCard
+          : styles.badgeCoin;
+      return <span className={`${styles.badgePill} ${badgeStyle}`}>{badge}</span>;
+    }
+    if (isToday) {
+      return <span className={`${styles.badgePill} ${styles.badgeToday}`}>Today</span>;
+    }
+    return null;
+  };
 
-  const isAmazonCard = rewardType === 'GIFT_CARD' || subtitle.toLowerCase().includes('amazon');
+  // Card class based on status
+  let cardClass = styles.rewardCard;
+  if (isToday) cardClass += ` ${styles.cardToday}`;
+  else if (isClaimed) cardClass += ` ${styles.cardClaimed}`;
+  else if (isDay7) cardClass += ` ${styles.cardDay7}`;
+
+  // Value color styling
+  const getValueColorClass = () => {
+    if (isClaimed) return styles.valueGreen;
+    if (isToday || isDay7) return styles.valueGold;
+    return styles.valuePurple;
+  };
+
+  // Amount display from backend
+  const displayValue = title || (currency === 'VES' ? `+${amount}` : `₹${amount}`);
+  const displaySubtext = subtitle || (currency === 'VES' ? `${amount} VEs` : 'Amazon Gift Card');
+  const sectionLabel = isDay7 ? 'Ultimate Reward' : 'Daily Reward';
 
   return (
-    <div className={cardClasses}>
-      {/* Top Header: Day Number + Badge */}
+    <div className={cardClass}>
+      {/* Top Header: Day & Badge */}
       <div className={styles.cardHeader}>
-        <span className={styles.dayText}>Day {day}</span>
-        
-        {badge && (
-          <span className={isToday ? styles.badgeToday : styles.badgeNormal}>
-            {badge}
-          </span>
-        )}
-        {isClaimed && !badge && (
-          <span className={styles.claimedCheckCircle}>
-            <CheckCircle2 size={11} color="#10b981" />
-          </span>
-        )}
+        <span className={styles.dayLabel}>Day {day}</span>
+        {renderBadge()}
       </div>
 
-      {/* Visual Icon Illustration */}
-      <div className={styles.iconSlot}>
-        {renderCardIcon()}
+      {/* 3D Asset Illustration */}
+      <div className={styles.assetSlot}>
+        {isToday && <div className={styles.glowBackdrop} />}
+        <img
+          src={getAsset()}
+          alt={`Day ${day} ${displayValue}`}
+          className={styles.assetImg}
+          loading="lazy"
+        />
       </div>
 
-      {/* Reward Labels */}
-      <div className={styles.labelsSection}>
-        <div className={styles.dailyRewardSub}>
-          {day === 7 ? 'Ultimate Reward' : 'Daily Reward'}
+      {/* Info: Label, Big Value, Subtext */}
+      <div className={styles.infoCol}>
+        <span className={styles.rewardLabel}>{sectionLabel}</span>
+        <div className={`${styles.rewardValue} ${getValueColorClass()}`}>
+          {displayValue}
         </div>
-        <div className={`${styles.mainAmount} ${isClaimed ? styles.greenAmount : ''}`}>
-          {title}
-        </div>
-        <div className={styles.currencySub} title={subtitle}>
-          {isAmazonCard ? 'Amazon Gift Card' : subtitle}
-        </div>
+        <span className={styles.rewardSubtext} title={displaySubtext}>
+          {displaySubtext}
+        </span>
       </div>
 
-      {/* Bottom CTA / State Badge */}
-      <div className={styles.actionFooter}>
-        {isToday && (
-          <button 
-            className={styles.claimBtn}
+      {/* Bottom Status Button */}
+      <div className={styles.actionSlot}>
+        {isToday ? (
+          <button
+            type="button"
+            className={styles.claimNowBtn}
             onClick={() => initiateClaim(day)}
             disabled={claiming}
           >
-            <span>Claim Now</span>
-            <ChevronRight size={12} />
+            <span>{claiming ? 'Claiming...' : 'Claim Now'}</span>
+            <ChevronRight size={13} strokeWidth={2.5} />
           </button>
-        )}
-
-        {isClaimed && (
+        ) : isClaimed ? (
           <div className={styles.claimedPill}>
-            <CheckCircle2 size={11} />
+            <Check size={12} strokeWidth={2.8} />
             <span>Claimed</span>
           </div>
-        )}
-
-        {isLocked && (
+        ) : (
           <div className={styles.lockedPill}>
-            <Lock size={10} />
+            <Lock size={11} />
             <span>Locked</span>
-          </div>
-        )}
-
-        {isMissed && (
-          <div className={styles.missedPill}>
-            <AlertCircle size={10} />
-            <span>Missed</span>
           </div>
         )}
       </div>

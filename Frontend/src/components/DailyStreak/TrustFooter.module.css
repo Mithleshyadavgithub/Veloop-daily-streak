@@ -1,0 +1,100 @@
+.footerStrip {
+  background: rgba(18, 12, 36, 0.75);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 14px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.footerStrip:hover {
+  background: rgba(26, 16, 50, 0.9);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.leftCol {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandBadge {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(217, 70, 239, 0.2) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badgeVr {
+  font-family: var(--vl-font-display, 'Poppins', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #facc15;
+  letter-spacing: -0.02em;
+}
+
+.brandTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mainText {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.domain {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.subText {
+  font-size: 0.68rem;
+  color: #a78bfa;
+}
+
+.rightCol {
+  display: flex;
+  align-items: center;
+  color: #a78bfa;
+  transition: transform 0.2s ease;
+}
+
+.footerStrip:hover .rightCol {
+  transform: translateX(3px);
+  color: #ffffff;
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 500px) {
+  .footerStrip {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+  .brandBadge {
+    width: 28px;
+    height: 28px;
+  }
+  .mainText {
+    font-size: 0.72rem;
+  }
+  .subText {
+    font-size: 0.64rem;
+  }
+}

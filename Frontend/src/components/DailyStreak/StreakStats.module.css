@@ -1,104 +1,113 @@
-.statsRow {
+.statsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 14px;
-  margin-bottom: 16px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-@media (min-width: 768px) {
-  .statsRow {
-    gap: 16px;
-    margin-top: 0;
-    margin-bottom: 24px;
-  }
-}
-
-.statBox {
-  background: rgba(22, 12, 48, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.statCard {
+  background: rgba(22, 14, 44, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.2);
   border-radius: 16px;
-  padding: 12px 8px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 14px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
 }
 
-@media (min-width: 768px) {
-  .statBox {
-    border-radius: 20px;
-    padding: 18px 20px;
-  }
+.statCard:hover {
+  background: rgba(30, 19, 58, 0.85);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
 }
 
-.headerLine {
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.iconWrapperPurple,
+.iconWrapperGreen,
+.iconWrapperGold {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  margin-bottom: 4px;
+  flex-shrink: 0;
 }
 
-.label {
-  color: #9c94b8;
-  font-size: 0.65rem;
-  font-weight: 700;
+.iconWrapperPurple {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c4b5fd;
+}
+
+.iconWrapperGreen {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.iconWrapperGold {
+  background: rgba(234, 179, 8, 0.2);
+  color: #facc15;
+}
+
+.statIcon {
+  width: 13px;
+  height: 13px;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #a78bfa;
   white-space: nowrap;
 }
 
-@media (min-width: 768px) {
-  .label {
-    font-size: 0.8rem;
-  }
-}
-
-.iconPurple {
-  color: #a855f7;
-}
-
-.iconGreen {
-  color: #10b981;
-}
-
-.iconGold {
-  color: #ffd700;
-}
-
-.valueWhite {
-  font-size: 1.25rem;
-  font-weight: 900;
+.statValueWhite {
+  font-family: var(--vl-font-display, 'Poppins', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
   color: #ffffff;
+  line-height: 1.1;
 }
 
-@media (min-width: 768px) {
-  .valueWhite {
-    font-size: 1.8rem;
+.statValueGreen {
+  font-family: var(--vl-font-display, 'Poppins', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #4ade80;
+  line-height: 1.1;
+}
+
+.statValueGold {
+  font-family: var(--vl-font-display, 'Poppins', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #facc15;
+  line-height: 1.1;
+}
+
+@media (max-width: 520px) {
+  .statsGrid {
+    gap: 8px;
   }
-}
-
-.valueGreen {
-  font-size: 1.25rem;
-  font-weight: 900;
-  color: #10b981;
-}
-
-@media (min-width: 768px) {
-  .valueGreen {
-    font-size: 1.8rem;
+  .statCard {
+    padding: 10px 10px;
   }
-}
-
-.valueGold {
-  font-size: 1.05rem;
-  font-weight: 900;
-  color: #ffd700;
-  white-space: nowrap;
-}
-
-@media (min-width: 768px) {
-  .valueGold {
-    font-size: 1.8rem;
+  .statLabel {
+    font-size: 0.68rem;
+  }
+  .statValueWhite,
+  .statValueGreen {
+    font-size: 1.15rem;
+  }
+  .statValueGold {
+    font-size: 0.95rem;
   }
 }

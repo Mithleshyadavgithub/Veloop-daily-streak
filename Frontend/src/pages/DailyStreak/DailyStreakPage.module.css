@@ -1,80 +1,205 @@
-.pageContainer {
-  max-width: 600px;
+.pageWrapper {
+  min-height: 100vh;
+  background-color: var(--vl-bg, #0d071b);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.22), transparent 45%),
+    radial-gradient(circle at 90% 40%, rgba(251, 191, 36, 0.08), transparent 40%),
+    radial-gradient(circle at 10% 80%, rgba(6, 182, 212, 0.06), transparent 35%);
+  color: #ffffff;
+  padding-bottom: 60px;
+}
+
+.container {
+  max-width: 1220px;
   margin: 0 auto;
-  padding: 72px 12px 80px;
-  animation: pageFadeIn 0.3s ease-out;
-  width: 100%;
+  padding: 0 20px;
 }
 
-@media (min-width: 768px) {
-  .pageContainer {
-    max-width: 900px;
-    padding: 85px 20px 80px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .pageContainer {
-    max-width: 1100px;
-    padding: 95px 24px 60px;
-  }
-}
-
-.headerBar {
+/* Reset Alert */
+.resetAlert {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
+  gap: 12px;
+  color: #fca5a5;
+  font-size: 0.88rem;
 }
 
-.backBtn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #c4bcd8;
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
+/* ============================================================== */
+/* DESKTOP LAYOUT (>= 992px) - Matches Page 62 reference image   */
+/* ============================================================== */
+.desktopLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.desktopLeftCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.desktopHeroText {
+  margin-bottom: 24px;
+}
+
+.desktopMainHeading {
+  font-family: var(--vl-font-display, 'Poppins', sans-serif);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+}
+
+.goldText {
+  color: #facc15;
+  text-shadow: 0 0 24px rgba(250, 204, 21, 0.4);
+}
+
+.desktopSubHeading {
+  font-size: 0.95rem;
+  color: #c4b5fd;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.desktopDivider {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.2s;
+  gap: 10px;
+  margin: 20px 0;
+  text-align: center;
 }
 
-.backBtn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+.sparkleIcon {
+  color: #a855f7;
+  font-size: 0.9rem;
 }
 
-.pageTitle {
-  font-size: 1.35rem;
+.dividerText {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #c4b5fd;
+}
+
+.heroCrownWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0 32px 0;
+  animation: floatCrownHero 5s ease-in-out infinite;
+}
+
+.heroCrownImg {
+  max-width: 260px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 32px rgba(234, 179, 8, 0.35));
+}
+
+.desktopRightCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.desktopStreakRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.streakIndicatorPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  color: #fed7aa;
+  font-size: 0.88rem;
   font-weight: 800;
-  color: #ffffff;
-  margin: 0;
+  box-shadow: 0 0 16px rgba(249, 115, 22, 0.18);
 }
 
-@media (min-width: 768px) {
-  .pageTitle {
-    font-size: 1.75rem;
+.flameIcon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.streakSubNote {
+  font-size: 0.78rem;
+  color: #fdba74;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.desktopCalendarBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.45);
+  color: #ddd6fe;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.desktopCalendarBtn:hover {
+  background: rgba(139, 92, 246, 0.35);
+  border-color: rgba(139, 92, 246, 0.75);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ============================================================== */
+/* MOBILE / TABLET LAYOUT (< 992px) - Matches Page 63 reference   */
+/* ============================================================== */
+.mobileLayout {
+  display: none;
+}
+
+@keyframes floatCrownHero {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
   }
 }
 
-.titleFlame {
-  filter: drop-shadow(0 0 6px rgba(255, 153, 0, 0.6));
+/* Responsive Switching */
+@media (max-width: 991px) {
+  .desktopLayout {
+    display: none;
+  }
+  .mobileLayout {
+    display: flex;
+    flex-direction: column;
+  }
+  .container {
+    max-width: 600px;
+    padding: 0 16px;
+  }
 }
 
-.headerRightToken {
-  background: rgba(30, 19, 58, 0.9);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  padding: 5px 12px;
-  border-radius: 18px;
-  color: #ffd700;
-  font-weight: 800;
-  font-size: 0.82rem;
-}
-
-@keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (max-width: 575px) {
+  .container {
+    padding: 0 12px;
+  }
 }

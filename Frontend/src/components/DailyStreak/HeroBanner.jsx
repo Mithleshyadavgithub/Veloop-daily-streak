@@ -1,89 +1,77 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './HeroBanner.module.css';
-import { Flame, Calendar, Sparkles, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Calendar as CalendarIcon, ChevronRight } from 'lucide-react';
 import { useStreak } from '../../context/StreakContext';
-import { GiftBoxIcon, CoinStackIcon } from '../../assets/rewardIcons';
+import { calendarImg, exclusiveGiftImg, flameImg } from '../../assets/streakAssets';
+import StreakCalendarModal from './StreakCalendarModal';
 
 export default function HeroBanner() {
-  const { streakData, countdown, initiateClaim, claiming } = useStreak();
+  const { streakData } = useStreak();
+  const [calendarOpen, setCalendarOpen] = useState(false);
 
-  const currentStreak = streakData?.streak?.currentStreak ?? 0;
-  const currentDay = streakData?.streak?.currentDay ?? 1;
-  const todayReward = streakData?.rewards?.find(r => r.day === currentDay);
-  const isTodayClaimable = todayReward?.status === 'TODAY';
-  const isAlreadyClaimedToday = todayReward?.status === 'CLAIMED';
+  const currentStreak = streakData?.streak?.currentStreak ?? 1;
 
   return (
-    <div className={styles.heroCard}>
-      {/* Mobile Top Illustrated Header Icons (Page 63) */}
-      <div className={styles.mobileArtRow}>
-        {/* Calendar check illustration */}
-        <div className={styles.calendarMiniArt}>
-          <div className={styles.calSheet}>
-            <span className={styles.calTopBar} />
-            <div className={styles.calBody}>
-              <span className={styles.calCheck}>✓</span>
+    <>
+      <div className={styles.heroCard}>
+        {/* Ambient background glow */}
+        <div className={styles.heroGlow} />
+
+        {/* 3D Calendar illustration on the left */}
+        <div className={styles.calendarArtWrapper}>
+          <img
+            src={calendarImg}
+            alt="Streak Calendar 3D"
+            className={styles.calendarArt}
+          />
+          <span className={styles.v3Badge}>V3</span>
+        </div>
+
+        {/* Center Content */}
+        <div className={styles.heroCenter}>
+          <h2 className={styles.heroTitle}>
+            Login Daily &amp; Earn{' '}
+            <span className={styles.goldText}>Bigger Rewards!</span>
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Maintain your streak and unlock exciting rewards every day.
+          </p>
+
+          {/* Bottom pills row */}
+          <div className={styles.pillsRow}>
+            <div className={styles.streakPill}>
+              <img src={flameImg} alt="Flame" className={styles.flameIcon} />
+              <span>{currentStreak} Day Streak</span>
             </div>
+
+            <button
+              type="button"
+              className={styles.calendarBtn}
+              onClick={() => setCalendarOpen(true)}
+              title="Open Streak Calendar"
+            >
+              <CalendarIcon size={14} className={styles.calIconSvg} />
+              <span>Streak Calendar</span>
+              <ChevronRight size={13} className={styles.chevronSvg} />
+            </button>
           </div>
-          <span className={styles.calCoinBadge}>🪙</span>
         </div>
 
-        {/* Gift Box mini illustration */}
-        <div className={styles.giftMiniArt}>
-          <GiftBoxIcon size={44} />
+        {/* 3D Gift Box illustration on the right */}
+        <div className={styles.giftArtWrapper}>
+          <img
+            src={exclusiveGiftImg}
+            alt="Reward Gift Box 3D"
+            className={styles.giftArt}
+          />
         </div>
       </div>
 
-      {/* Hero Headings */}
-      <div className={styles.titleSection}>
-        <h1 className={styles.heroTitle}>
-          Login Daily &amp; Earn <br />
-          <span className={styles.heroTitleHighlight}>Bigger Rewards!</span>
-        </h1>
-        <p className={styles.heroSubtitle}>
-          Maintain your streak and unlock exciting rewards every day.
-        </p>
-      </div>
-
-      {/* Streak Info Pills (Page 63) */}
-      <div className={styles.pillsRow}>
-        <div className={styles.streakBadge}>
-          <Flame size={15} color="#FF9900" className={styles.flameIcon} />
-          <span>{currentStreak} Day Streak</span>
-        </div>
-
-        <button className={styles.calendarBtn} title="Streak Calendar">
-          <Calendar size={13} />
-          <span>Streak Calendar</span>
-          <span className={styles.calendarArrow}>&gt;</span>
-        </button>
-      </div>
-
-      {/* Main Call to Action Button */}
-      {isTodayClaimable ? (
-        <button 
-          className={styles.claimHeroButton}
-          onClick={() => initiateClaim(currentDay)}
-          disabled={claiming}
-        >
-          <span>Claim Today's Reward ({todayReward?.title} {todayReward?.currency === 'VES' ? 'VES' : 'GC'})</span>
-          <ArrowRight size={16} />
-        </button>
-      ) : isAlreadyClaimedToday ? (
-        <div className={styles.lockedTimerBanner}>
-          <Clock size={16} color="#ffd700" />
-          <span>Next Reward Unlocks in: </span>
-          <strong className={styles.timerDisplay}>{countdown.formatted}</strong>
-        </div>
-      ) : (
-        <button 
-          className={styles.claimHeroButton}
-          onClick={() => initiateClaim(currentDay)}
-        >
-          <span>Claim Day {currentDay} Reward</span>
-          <ArrowRight size={16} />
-        </button>
-      )}
-    </div>
+      {/* Streak Calendar Modal */}
+      <StreakCalendarModal
+        open={calendarOpen}
+        onClose={() => setCalendarOpen(false)}
+      />
+    </>
   );
 }

@@ -1,57 +1,74 @@
-.gridContainer {
-  margin-top: 14px;
+.gridSection {
   margin-bottom: 32px;
 }
 
+/* Motivational Divider Strip */
 .dividerStrip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0 20px 0;
   text-align: center;
-  color: #ffd700;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 16px;
 }
 
-@media (min-width: 768px) {
-  .dividerStrip {
-    font-size: 0.88rem;
-    margin-bottom: 22px;
-  }
+.sparkleIcon {
+  color: #a855f7;
+  font-size: 0.85rem;
+  animation: pulseSparkle 2s ease-in-out infinite;
 }
 
-/* Row 1: 4 Cards on mobile and desktop */
-.gridRowTop {
+.dividerText {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #c4b5fd;
+  letter-spacing: 0.02em;
+}
+
+/* Row 1: 4 Cards */
+.row1Grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-@media (min-width: 768px) {
-  .gridRowTop {
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-}
-
-/* Row 2: 3 Cards centered on mobile */
-.gridRowBottom {
+/* Row 2: 3 Cards */
+.row2Grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  max-width: 95%;
-  margin: 0 auto;
+  gap: 12px;
 }
 
-@media (min-width: 768px) {
-  .gridRowBottom {
-    gap: 16px;
-    max-width: 85%;
+@keyframes pulseSparkle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
   }
 }
 
-@media (min-width: 1200px) {
-  .gridRowBottom {
-    max-width: 75%;
+/* Tablet & Mobile Breakpoints matching PDF Section 74 & 75 */
+@media (max-width: 680px) {
+  .row1Grid {
+    gap: 8px;
+  }
+  .row2Grid {
+    gap: 8px;
+  }
+  .dividerText {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .row1Grid {
+    gap: 6px;
+  }
+  .row2Grid {
+    gap: 6px;
   }
 }

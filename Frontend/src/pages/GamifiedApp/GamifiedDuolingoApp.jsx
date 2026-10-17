@@ -13,6 +13,9 @@ import {
 import { 
   CrownIcon, CoinStackIcon, AmazonGiftCardIcon, GiftBoxIcon, CalendarHeroIcon 
 } from '../../assets/rewardIcons';
+import { 
+  coinImg, crownImg, heroCrownImg, giftBoxImg, giftCardImg, exclusiveGiftImg, shieldImg, flameImg 
+} from '../../assets/streakAssets';
 import AboutDrawer from '../../components/Common/AboutDrawer';
 import UserProfileDrawer from '../../components/Common/UserProfileDrawer';
 import HowToEarnModal from '../../components/Common/HowToEarnModal';
@@ -165,7 +168,7 @@ export default function GamifiedDuolingoApp() {
               <Compass size={16} />
               <span>Dashboard</span>
             </button>
-            <button className={styles.navLinkItem} onClick={() => scrollToSection('daily-checkin')}>
+            <button className={styles.navLinkItem} onClick={() => setActiveTab('streak')}>
               <Flame size={16} color="#ff7b00" />
               <span>Daily Streak</span>
             </button>
@@ -205,7 +208,7 @@ export default function GamifiedDuolingoApp() {
             </div>
 
             {/* Streak Flame Pill */}
-            <div className={styles.streakFlamePill} onClick={() => scrollToSection('daily-checkin')} title="Current Active Streak">
+            <div className={styles.streakFlamePill} onClick={() => setActiveTab('streak')} title="View Daily Streak Page">
               <Flame size={16} color="#ff7b00" />
               <span className={styles.streakPillCount}>{currentStreak} Day Streak</span>
             </div>
@@ -349,7 +352,7 @@ export default function GamifiedDuolingoApp() {
             <div className={styles.statCardHeader}>
               <span className={`${styles.statTagLabel} ${styles.statTagYellow}`}>🪙 TOTAL COINS</span>
               <div className={styles.statIconBox} style={{ background: 'rgba(255, 215, 0, 0.15)', color: '#ffd700' }}>
-                <CoinStackIcon size={22} />
+                <img src={coinImg} alt="Coins" style={{ width: 26, height: 26, objectFit: 'contain' }} />
               </div>
             </div>
             <div className={styles.statBigValue}>{wallet.vesBalance || 100} <span className={styles.statUnit}>Coins</span></div>
@@ -521,7 +524,7 @@ export default function GamifiedDuolingoApp() {
             {/* Surprise Box Visual */}
             <div className={styles.surpriseVisualBox}>
               <div className={styles.surpriseGlowRing} />
-              <GiftBoxIcon size={80} className={styles.floatingGiftIcon} />
+              <img src={exclusiveGiftImg} alt="Gift Box" style={{ width: 88, height: 88, objectFit: 'contain' }} className={styles.floatingGiftIcon} />
               <div className={styles.activeTodayTag}>
                 <span className={styles.activeDotPulse} /> {todayName.toUpperCase()} SURPRISE READY
               </div>
@@ -536,7 +539,7 @@ export default function GamifiedDuolingoApp() {
               <div className={styles.surprisePerksGrid}>
                 <div className={styles.surprisePerkItem}>
                   <div className={styles.perkIconBox} style={{ background: 'rgba(255, 145, 0, 0.2)', color: '#ff9100' }}>
-                    <CoinStackIcon size={22} />
+                    <img src={coinImg} alt="Coins" style={{ width: 24, height: 24, objectFit: 'contain' }} />
                   </div>
                   <div>
                     <span className={styles.perkLabel}>Coins Reward</span>
@@ -613,7 +616,7 @@ export default function GamifiedDuolingoApp() {
           <div className={styles.ultimateBannerPdf}>
             <div className="d-flex align-items-center gap-3">
               <div className={styles.ultimateCrownWrapper}>
-                <CrownIcon size={56} />
+                <img src={heroCrownImg} alt="Crown" style={{ width: 72, height: 60, objectFit: 'contain' }} />
               </div>
               <div>
                 <div className="d-flex align-items-center gap-2">
@@ -622,17 +625,16 @@ export default function GamifiedDuolingoApp() {
                 </div>
                 <h3 className={styles.ultimateRewardTitle}>₹500 Amazon Gift Card &amp; Gold Crown</h3>
                 <p className={styles.ultimateRewardSub}>
-                  Complete all 7 days of daily check-ins to receive a real ₹500 Amazon Gift Card voucher code and unlock your VIP Gold Crown!
+                  Complete all 7 days of daily check-ins to receive your ₹500 Amazon voucher code and VIP Crown!
                 </p>
               </div>
             </div>
 
             <button 
               className={styles.ultimateCheckInBtn}
-              onClick={() => initiateClaim(currentDay)}
-              disabled={claiming}
+              onClick={() => setActiveTab('streak')}
             >
-              <span>Check-In Day {currentDay}</span>
+              <span>Go to Daily Streak</span>
               <ArrowRight size={16} />
             </button>
           </div>
@@ -666,13 +668,13 @@ export default function GamifiedDuolingoApp() {
 
                   <div className={styles.cardIconHolder}>
                     {isVip ? (
-                      <CrownIcon size={46} />
+                      <img src={crownImg} alt="Crown" style={{ width: 44, height: 44, objectFit: 'contain' }} />
                     ) : r.rewardType === 'GIFT_CARD' ? (
-                      <AmazonGiftCardIcon size={42} />
+                      <img src={giftCardImg} alt="Gift Card" style={{ width: 44, height: 44, objectFit: 'contain' }} />
                     ) : r.assetType === 'gift-box' ? (
-                      <GiftBoxIcon size={42} />
+                      <img src={giftBoxImg} alt="Gift Box" style={{ width: 44, height: 44, objectFit: 'contain' }} />
                     ) : (
-                      <CoinStackIcon size={42} />
+                      <img src={coinImg} alt="Coins" style={{ width: 44, height: 44, objectFit: 'contain' }} />
                     )}
                   </div>
 
@@ -1075,12 +1077,12 @@ export default function GamifiedDuolingoApp() {
                 {/* 2. 7-Day Rewards */}
                 <div 
                   className={styles.featureDrawerItem}
-                  onClick={() => { setMobileDrawerOpen(false); scrollToSection('reward-matrix'); }}
+                  onClick={() => { setMobileDrawerOpen(false); setActiveTab('streak'); }}
                 >
                   <div className={styles.featureIconCircle} style={{ background: 'rgba(255, 215, 0, 0.15)', color: '#ffd700' }}>
-                    <CrownIcon size={22} />
+                    <img src={crownImg} alt="Crown" style={{ width: 22, height: 22, objectFit: 'contain' }} />
                   </div>
-                  <div className={styles.featureItemTitle}>7-Day Rewards</div>
+                  <div className={styles.featureItemTitle}>Daily Streak</div>
                   <div className={styles.featureItemSub}>₹500 Amazon Voucher</div>
                 </div>
 

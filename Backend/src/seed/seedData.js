@@ -7,13 +7,13 @@ const Wallet = require('../models/Wallet');
 const StreakClaim = require('../models/StreakClaim');
 
 const INITIAL_REWARDS = [
-  { day: 1, rewardType: 'VES', currency: 'VES', amount: 5, title: '+5', subtitle: '5 VES', assetType: 'coin', badge: null },
-  { day: 2, rewardType: 'VES', currency: 'VES', amount: 10, title: '+10', subtitle: '10 VES', assetType: 'coin', badge: 'Today' },
-  { day: 3, rewardType: 'VES', currency: 'VES', amount: 15, title: '+15', subtitle: '15 VES', assetType: 'coin', badge: null },
-  { day: 4, rewardType: 'GIFT_CARD', currency: 'INR', amount: 50, title: '₹50', subtitle: 'Amazon Gift Card', assetType: 'gift-box', badge: 'Gift Box' },
-  { day: 5, rewardType: 'GIFT_CARD', currency: 'INR', amount: 100, title: '₹100', subtitle: 'Amazon Gift Card', assetType: 'gift-card', badge: 'Gift Card' },
-  { day: 6, rewardType: 'VES', currency: 'VES', amount: 30, title: '+30', subtitle: '30 VES', assetType: 'coin', badge: 'Coin' },
-  { day: 7, rewardType: 'ULTIMATE', currency: 'INR', amount: 500, title: '₹500', subtitle: 'Amazon Gift Card', assetType: 'crown', badge: 'VIP' }
+  { day: 1, rewardType: 'VES', currency: 'VES', amount: 5, title: '+5', subtitle: '5 VEs', assetType: 'coin', badge: null },
+  { day: 2, rewardType: 'VES', currency: 'VES', amount: 10, title: '+10', subtitle: '10 VEs', assetType: 'coin', badge: 'Today' },
+  { day: 3, rewardType: 'VES', currency: 'VES', amount: 15, title: '+15', subtitle: '15 VEs', assetType: 'coin', badge: null },
+  { day: 4, rewardType: 'GIFT_CARD', currency: 'INR', amount: 1, title: '₹1', subtitle: 'Amazon Gift Card', assetType: 'gift-box', badge: null },
+  { day: 5, rewardType: 'GIFT_CARD', currency: 'INR', amount: 2, title: '₹2', subtitle: 'Amazon Gift Card', assetType: 'gift-card', badge: 'Gift Card' },
+  { day: 6, rewardType: 'VES', currency: 'VES', amount: 30, title: '+30', subtitle: '30 VEs', assetType: 'coin', badge: 'Coin' },
+  { day: 7, rewardType: 'ULTIMATE', currency: 'INR', amount: 5, title: '₹5', subtitle: 'Amazon Gift Card', assetType: 'crown', badge: 'VIP' }
 ];
 
 async function seed() {
